@@ -1,0 +1,147 @@
+body{
+	font-family: 'Roboto Mono', monospace;
+	padding:0;
+	margin:0;
+    padding-bottom: 50px;
+}
+
+.body{
+    width:85%;
+    margin:0 auto;
+}
+
+.title{
+	display:flex;
+	justify-content: center;
+    margin-bottom:50px;
+}
+
+.title h1{
+	display:block;
+	font-size:6em;
+	margin-bottom: 35px;
+    position:relative;
+}
+
+.title h1::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    display:inline-block;
+    width:50%;
+    height:2px;
+    background-color:black;
+}
+
+.title a{
+	text-decoration:none;
+	color:white;
+	background-color:black;
+	padding: 13px 28px;
+	transition:.7s;
+    width:100px;
+    display:block;
+    margin:0 auto;
+    border:2px solid black;
+    position:relative;
+}
+
+.title a:hover{
+    background-color:white;
+    color:black;
+    font-weight:700;
+}
+
+.colunas__list{
+	min-height:450px;
+}
+
+.coluna-item{
+	width:26%;
+	border:1px solid black;
+	display:flex;
+	justify-content:center;
+	position:relative;
+	box-sizing:border-box;
+	padding-left:1.5%;
+}
+
+.coluna-item::before{
+	content:"";
+	position:absolute;
+	left:6%;
+	height:100%;
+	width: 1px;
+	background-color:black;
+}
+
+.coluna-item h3{
+	display:inline-block;
+	margin-top:26px;
+	font-size: 1.8em;
+	position:relative;
+	font-weight:400;
+	height:8%;
+	margin-top:39px;
+
+}
+
+.coluna-item h3::before{
+	content: "";
+    position: absolute;
+    top: 136%;
+    left: 1%;
+    width: 42px;
+    height: 9px;
+    background-color: black;
+
+}
+
+.colunas__inner{
+	display:flex;
+	justify-content:space-evenly;
+	width:100%;
+	height:100%;
+    min-height:450px;
+}
+
+.inputs__form-adiciona{
+    margin:0 auto;
+    margin-bottom:40px;
+    display:block;
+    width: 85%;
+}
+
+.inputs__form-adiciona input{
+    border: 1px solid black;
+    height: 21px;
+    font-size: 1.3em;
+    padding: .25em .15em;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.inputs__form-adiciona label{
+    font-size:1.3em;
+}
+
+.select-categoria select{
+    width: 267px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    left: 11px;
+    font-family: 'Roboto Mono', monospace;
+    font-size:1em;
+}
+
+.select-categoria{
+    margin-top:10px;
+}
+
+.footer{
+    margin:0 auto;
+    width:89%;
+    margin-top:30px;
+}

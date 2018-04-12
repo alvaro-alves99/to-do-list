@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS to-do list</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="CSS/media-queries.css">
+</head>
+<body>
+	<div class="body">
+		<section class="title">
+			<div class="title__inner">
+				<h1>To-do List</h1>
+                <div class="form-adiciona__container">
+                    <div class="inputs__form-adiciona">
+                        <label for="nome-tarefa">Task name -></label>
+                        <input id="nome-tarefa" type="text" name="nome-tarefa">
+
+                        <div class="select-categoria">
+                            <label for="categoria-tarefa">Category -></label>
+                            <select id="categoria-tarefa">
+                                <option>College</option>
+                                <option>Work</option>
+                                <option>Projects</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <a href="#" class="botao-adiciona">Add Task +</a>
+                </div>
+
+			</div>
+		</section>
+
+		<section class="colunas__list">
+			<div class="colunas__inner">
+				<div class="coluna-item">
+					<div class="titulo">
+						<h3>Pending</h3>
+                        <div class="conteudo-tarefas">
+                        </div>
+					</div>
+				</div>
+				<div class="coluna-item">
+					<div class="titulo">
+						<h3>Running</h3>
+                        <div class="conteudo-tarefas">
+                        </div>
+					</div>
+				</div>
+				<div class="coluna-item">
+					<div class="titulo">
+						<h3>Completed</h3>
+					</div>
+                    <div class="conteudo-tarefas">
+                    </div>
+				</div>
+			</div>
+		</section>
+
+        <footer class="footer">
+            <span>Created by <strong>Álvaro Alves</strong> &copy;2018</span>
+        </footer>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+@media screen and (max-width: 1120px){
+    .coluna-item h3{
+        font-size:1.5em;
+    }
+}
+
+@media screen and (max-width:768px){
+    .colunas__inner{
+        flex-direction:column;
+    }
+    
+    .coluna-item:not(:last-of-type){
+        margin-bottom:25px;
+    }
+    
+    .coluna-item{
+        width:100%;
+    }
+    
+    .title h1{
+        font-size:4em;
+    }
+    
+    .select-categoria select{
+        left:0px;
+    }
+    
+    .inputs__form-adiciona label{
+    margin:4px 0;
+    display: inline-block;
+    }
+    
+}
