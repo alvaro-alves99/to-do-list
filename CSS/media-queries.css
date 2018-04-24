@@ -18,7 +18,8 @@
     }
     
     .title h1{
-        font-size:4em;
+        font-size:2.8em;
+        text-align:center;
     }
     
     .select-categoria select{
@@ -28,6 +29,19 @@
     .inputs__form-adiciona label{
     margin:4px 0;
     display: inline-block;
+    }
+
+    .inputs__form-adiciona input{
+        width:100%;
+    }
+
+    .inputs__form-adiciona select{
+        width:104%;
+    }
+
+    .next-arrow{
+        display:block;
+        margin-bottom:25px;
     }
     
 }

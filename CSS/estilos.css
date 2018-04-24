@@ -13,7 +13,7 @@ body{
 .title{
 	display:flex;
 	justify-content: center;
-    margin-bottom:50px;
+    margin-bottom:60px;
 }
 
 .title h1{
@@ -34,23 +34,25 @@ body{
     background-color:black;
 }
 
-.title a{
+.title .botao-adiciona{
 	text-decoration:none;
 	color:white;
+    font-size:1.1em;
 	background-color:black;
 	padding: 13px 28px;
 	transition:.7s;
-    width:100px;
+    width:154px;
     display:block;
     margin:0 auto;
     border:2px solid black;
     position:relative;
+    cursor:pointer;
+    user-select:none;
 }
 
-.title a:hover{
+.title .botao-adiciona:hover{
     background-color:white;
     color:black;
-    font-weight:700;
 }
 
 .colunas__list{
@@ -61,8 +63,9 @@ body{
 	width:26%;
 	border:1px solid black;
 	display:flex;
-	justify-content:center;
+	align-items:center;
 	position:relative;
+    flex-direction:column;
 	box-sizing:border-box;
 	padding-left:1.5%;
 }
@@ -76,9 +79,15 @@ body{
 	background-color:black;
 }
 
-.coluna-item h3{
+.coluna-item .titulo{
+    display:inline-block;
+    position:relative;
+    margin-bottom:50px;
+}
+
+.coluna-item .titulo h3{
 	display:inline-block;
-	margin-top:26px;
+    margin:0 auto;
 	font-size: 1.8em;
 	position:relative;
 	font-weight:400;
@@ -87,15 +96,26 @@ body{
 
 }
 
-.coluna-item h3::before{
+.coluna-item .titulo h3::before{
 	content: "";
     position: absolute;
     top: 136%;
     left: 1%;
     width: 42px;
     height: 9px;
-    background-color: black;
 
+}
+
+.pending-title::before{
+    border:1px solid #BD110B;
+}
+
+.running-title::before{
+    border:1px solid blue;
+}
+
+.completed-title::before{
+    border:1px solid green;
 }
 
 .colunas__inner{
@@ -140,8 +160,118 @@ body{
     margin-top:10px;
 }
 
+.conteudo-tarefas{
+    width:80%;
+    padding-bottom:35px;
+    display:flex;
+    flex-direction:column-reverse;
+}
+
+.task-cell{
+    padding-left: 10px;
+    padding-bottom: 12px;
+    user-select:none;
+    transition:.5s;
+}
+
+.task-cell:hover{
+    cursor:move;
+}
+
+.task-title{
+    padding-left:3%;
+    user-select:none;
+}
+
+.task-title h4{
+    position:relative;
+    text-indent:25px;
+    widows:2;
+}
+
+.task-title h4::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 1%;
+    top: 10%;
+    width: 6%;
+    height: 10px;
+}
+
+.pending-tasks .task-title h4::before{
+    border:1px solid #BD110B;
+}
+
+.running-tasks .task-title h4::before{
+    border:1px solid blue;
+}
+
+.completed-tasks .task-title h4::before{
+    border:1px solid green;
+}
+
 .footer{
     margin:0 auto;
     width:89%;
     margin-top:30px;
+}
+
+.task-content{
+    padding-left:9%;
+}
+
+.task-content>span{
+    display:inline-block;
+    font-style:italic;
+
+}
+
+.category-span{
+    margin-bottom:10px;
+}
+
+.next-arrow span{
+    display:inline-block;
+    margin:0 auto;
+    width:55px;
+    background-color:black;
+    color:white;
+    position:relative;
+    padding: 12px 21px 18px 24px;
+}
+
+.move-span{
+    width:55px;
+}
+
+.move-span::before{
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    left: -10px;
+    top: 2px;
+    background-image: url(Imagens/down-arrow.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.delete-span{
+    width:58px;
+}
+
+.next-inner{
+    width:92%;
+    margin:0 auto;
+}
+
+.next-arrow{
+    display:none;
+}
+
+.id-task{
+    display:none !important;
 }

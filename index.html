@@ -4,7 +4,7 @@
 	<title>JS to-do list</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
+	<link href="fontes-google.css" rel="stylesheet">
 	<link rel="stylesheet" href="CSS/estilos.css">
     <link rel="stylesheet" href="CSS/media-queries.css">
 </head>
@@ -14,22 +14,25 @@
 			<div class="title__inner">
 				<h1>To-do List</h1>
                 <div class="form-adiciona__container">
-                    <div class="inputs__form-adiciona">
-                        <label for="nome-tarefa">Task name -></label>
-                        <input id="nome-tarefa" type="text" name="nome-tarefa">
+                	<form action="" onsubmit="teste()">
 
-                        <div class="select-categoria">
-                            <label for="categoria-tarefa">Category -></label>
-                            <select id="categoria-tarefa">
-                                <option>College</option>
-                                <option>Work</option>
-                                <option>Projects</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                    </div>
+	                    <div class="inputs__form-adiciona">
+	                        <label for="nome-tarefa">Task name -&gt;</label>
+	                        <input id="nome-tarefa" type="text" name="nome-tarefa">
 
-                    <a href="#" class="botao-adiciona">Add Task +</a>
+	                        <div class="select-categoria">
+	                            <label for="categoria-tarefa">Category -&gt;</label>
+	                            <select id="categoria-tarefa">
+	                                <option value="College">College</option>
+	                                <option value="Work">Work</option>
+	                                <option value="Projects">Projects</option>
+	                                <option value="Other">Other</option>
+	                            </select>
+	                        </div>
+	                    </div>
+
+	                    <button class="botao-adiciona" type="submit">Add Task +</button>
+                    </form>
                 </div>
 
 			</div>
@@ -39,32 +42,81 @@
 			<div class="colunas__inner">
 				<div class="coluna-item">
 					<div class="titulo">
-						<h3>Pending</h3>
-                        <div class="conteudo-tarefas">
-                        </div>
+						<h3 class="pending-title">Pending</h3>
+					</div>
+
+                    <div class="conteudo-tarefas pending-tasks" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="running">
+
+					<!--	<div class="task-cell" draggable="true">
+							<div class="task-title">
+								<h4>Estudar para a prova da faculdade</h4>
+							</div>
+							<div class="task-content">
+								<span class="category-span"><strong>Category:<br></strong> College</span>
+								<span class="time-span"><strong>Added at:<br></strong> 24/04 - 18:40</span>
+							</div>
+						</div> -->
+
+                    </div>
+					
+				</div>
+				
+				<div class="next-arrow">
+					<div class="next-inner">
+						<span class="move-span">Move</span>
+						<span class="delete-span">Delete</span>
 					</div>
 				</div>
-				<div class="coluna-item">
+
+				<div class="coluna-item" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="running">
 					<div class="titulo">
-						<h3>Running</h3>
-                        <div class="conteudo-tarefas">
-                        </div>
+						<h3 class="running-title">Running</h3>
+				</div>
+
+                    <div class="conteudo-tarefas running-tasks">
+                        <!--<div class="task-cell">
+							<div class="task-title">
+								<h4>Consertar notebook</h4>
+							</div>
+							<div class="task-content">
+								<span class="category-span"><strong>Category:<br></strong> College</span>
+								<span class="time-span"><strong>Started at:<br></strong> 24/04 - 18:40</span>
+							</div> 
+						</div>-->
 					</div>
 				</div>
-				<div class="coluna-item">
+				<div class="coluna-item" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="completed">
 					<div class="titulo">
-						<h3>Completed</h3>
+						<h3 class="completed-title">Completed</h3>
 					</div>
-                    <div class="conteudo-tarefas">
+                    <div class="conteudo-tarefas completed-tasks">
+						<!--<div class="task-cell">
+							<div class="task-title">
+								<h4>Levar o lixo pra fora</h4>
+							</div>
+							<div class="task-content">
+								<span class="category-span"><strong>Category:<br></strong> College</span>
+								<span class="time-span"><strong>Completed at:<br></strong> 24/04 - 18:40</span>
+							</div> 
+						</div>-->
                     </div>
 				</div>
 			</div>
-		</section>
+		</section> 
 
         <footer class="footer">
             <span>Created by <strong>Álvaro Alves</strong> &copy;2018</span>
         </footer>
 	</div>
 
+	<script src="App/Helpers/Helpers.js"></script>
+	<script src="App/Model/Model.js"></script>
+	<script src="App/View/View.js"></script>
+	<script src="App/Controller/Controller.js"></script>
+	<script>
+		var $ = document.querySelector.bind(document);
+		var controller = new Controller();
+	</script>
+	<script src="App/scripts.js"></script>
 </body>
 </html>
