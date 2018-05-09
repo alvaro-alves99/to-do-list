@@ -9,7 +9,7 @@ class View{
 
 	updateViewPending(array){
 		this.TaskCellsPending = array.map((task, n) =>{
-						return `<div class="task-cell" draggable="true" id="${task.id}">
+						return `<div class="task-cell" draggable="true" id="${task.id}" type-of-task="pending">
 							<div class="task-title">
 								<h4>${task.taskName}</h4>
 							</div>

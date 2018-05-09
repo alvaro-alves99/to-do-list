@@ -32,6 +32,7 @@
 	                    </div>
 
 	                    <button class="botao-adiciona" type="submit">Add Task +</button>
+	                    <span class="span-description">Just <strong>drag the tasks</strong> to the column you want!</span>
                     </form>
                 </div>
 
@@ -40,22 +41,12 @@
 
 		<section class="colunas__list">
 			<div class="colunas__inner">
-				<div class="coluna-item">
+				<div class="coluna-item" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="pending">
 					<div class="titulo">
 						<h3 class="pending-title">Pending</h3>
 					</div>
 
-                    <div class="conteudo-tarefas pending-tasks" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="running">
-
-					<!--	<div class="task-cell" draggable="true">
-							<div class="task-title">
-								<h4>Estudar para a prova da faculdade</h4>
-							</div>
-							<div class="task-content">
-								<span class="category-span"><strong>Category:<br></strong> College</span>
-								<span class="time-span"><strong>Added at:<br></strong> 24/04 - 18:40</span>
-							</div>
-						</div> -->
+                    <div class="conteudo-tarefas pending-tasks">
 
                     </div>
 					
@@ -74,15 +65,7 @@
 				</div>
 
                     <div class="conteudo-tarefas running-tasks">
-                        <!--<div class="task-cell">
-							<div class="task-title">
-								<h4>Consertar notebook</h4>
-							</div>
-							<div class="task-content">
-								<span class="category-span"><strong>Category:<br></strong> College</span>
-								<span class="time-span"><strong>Started at:<br></strong> 24/04 - 18:40</span>
-							</div> 
-						</div>-->
+                        
 					</div>
 				</div>
 				<div class="coluna-item" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="completed">
@@ -90,15 +73,7 @@
 						<h3 class="completed-title">Completed</h3>
 					</div>
                     <div class="conteudo-tarefas completed-tasks">
-						<!--<div class="task-cell">
-							<div class="task-title">
-								<h4>Levar o lixo pra fora</h4>
-							</div>
-							<div class="task-content">
-								<span class="category-span"><strong>Category:<br></strong> College</span>
-								<span class="time-span"><strong>Completed at:<br></strong> 24/04 - 18:40</span>
-							</div> 
-						</div>-->
+						
                     </div>
 				</div>
 			</div>

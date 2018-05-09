@@ -13,7 +13,7 @@ body{
 .title{
 	display:flex;
 	justify-content: center;
-    margin-bottom:60px;
+    margin-bottom:43px;
 }
 
 .title h1{
@@ -53,6 +53,14 @@ body{
 .title .botao-adiciona:hover{
     background-color:white;
     color:black;
+}
+
+.span-description{
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    font-size:.95em;
+    margin-top:35px;
 }
 
 .colunas__list{
@@ -274,4 +282,8 @@ body{
 
 .id-task{
     display:none !important;
+}
+
+.transformY{
+    transform:scaleY(0) !important;
 }
