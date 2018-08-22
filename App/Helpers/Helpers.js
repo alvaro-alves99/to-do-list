@@ -4,14 +4,16 @@ class Helper{
 		throw new Error("essa classe nao pode ser instanciada");
 	}
 
-	static	returnDate(){
+	static returnDate(){
 
 			let currentDate = new Date();
 			return `${currentDate.getDate()}/${currentDate.getMonth() + 1} - ${currentDate.getHours()}:${currentDate.getMinutes()}`;
 		}
 
 
-	static assignDragMovementOne(container){
+	static assignDragMovementOne(container, Model){
+
+		console.log(Model);
 
 		container.addEventListener("dragstart", function(ev){
 
@@ -33,29 +35,32 @@ class Helper{
 					this.innerHTML = "";
 					this.parentNode.removeChild(this);
 
-					ModelList.eraseFromModel(this, typeOfTask);
+					console.log(Model);
+
+					Model.eraseFromModel(this, typeOfTask);
 				}, 300);
 
-				
+
 
 			});
 	}
 
-	static assignDragMovement(nodes){
+	static assignDragMovement(nodes, Model){
 
 		nodes.forEach(function(node){
 
-			Helper.assignDragMovementOne(node);
+			Helper.assignDragMovementOne(node, Model);
 
 			});
 		};
 
 
-	static onDrop(ev){
+	static onDrop(ev, Model){
+
 		ev.preventDefault();
 
  		let data = ev.dataTransfer.getData("text");
- 		
+
  		let containerTask = document.createElement('div');
  		containerTask.classList = 'task-cell';
  		containerTask.innerHTML = data;
@@ -81,19 +86,18 @@ class Helper{
  			let finalColumn = selfTarget.getAttribute('columntype');
 
  			containerTask.setAttribute('type-of-task', finalColumn);
- 			
+
 
  			// container pai (coluna), container tarefa, model excluir, model adicionar
- 			ModelList.moveTask(selfTarget, containerTask, initialColumn, finalColumn);
+ 			Model.moveTask(selfTarget, containerTask, initialColumn, finalColumn);
 
  			containerTask.children[2].textContent = finalColumn;
 
  			selfTarget.childNodes[3].appendChild(containerTask);
 
- 			console.log(controller.model);
  		}
 
- 		
+
 	}
 
 	static dragOver(ev){

@@ -41,7 +41,7 @@
 
 		<section class="colunas__list">
 			<div class="colunas__inner">
-				<div class="coluna-item" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="pending">
+				<div class="coluna-item" ondrop="controller.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="pending">
 					<div class="titulo">
 						<h3 class="pending-title">Pending</h3>
 					</div>
@@ -49,9 +49,9 @@
                     <div class="conteudo-tarefas pending-tasks">
 
                     </div>
-					
+
 				</div>
-				
+
 				<div class="next-arrow">
 					<div class="next-inner">
 						<span class="move-span">Move</span>
@@ -59,35 +59,41 @@
 					</div>
 				</div>
 
-				<div class="coluna-item" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="running">
+				<div class="coluna-item" ondrop="controller.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="running">
 					<div class="titulo">
 						<h3 class="running-title">Running</h3>
 				</div>
 
                     <div class="conteudo-tarefas running-tasks">
-                        
+
 					</div>
 				</div>
-				<div class="coluna-item" ondrop="Helper.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="completed">
+				<div class="coluna-item" ondrop="controller.onDrop(event)" ondragover="Helper.dragOver(event)" columnType="completed">
 					<div class="titulo">
 						<h3 class="completed-title">Completed</h3>
 					</div>
                     <div class="conteudo-tarefas completed-tasks">
-						
+
                     </div>
 				</div>
 			</div>
-		</section> 
+		</section>
 
         <footer class="footer">
             <span>Created by <strong>Álvaro Alves</strong> &copy;2018</span>
         </footer>
 	</div>
 
+	<script src="App/Services/TaskDAO.js"></script>
 	<script src="App/Helpers/Helpers.js"></script>
+	<script src="App/Helpers/BancoHelper.js"></script>
 	<script src="App/Model/Model.js"></script>
 	<script src="App/View/View.js"></script>
 	<script src="App/Controller/Controller.js"></script>
+	<script src="App/Services/ConnectionFactory.js"></script>
+	<script src="App/Factories/ProxyFactory.js"></script>
+
+
 	<script>
 		var $ = document.querySelector.bind(document);
 		var controller = new Controller();

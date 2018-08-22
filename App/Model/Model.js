@@ -1,12 +1,12 @@
 class ModelList{
-	
+
 	constructor(){
 		this.PendingTasks = [];
 		this.runningTasks = [];
 		this.CompletedTasks = [];
 	}
 
-	static eraseFromModel(self, typeOfTask){
+	eraseFromModel(self, typeOfTask){
 		let id = self.getAttribute('id');
 
 		let newModel = null;
@@ -34,8 +34,12 @@ class ModelList{
 
 	}
 
+	adicionarTarefa(task){
+		this.PendingTasks.push(task);
+	}
+
 	// container pai (coluna), container tarefa, model excluir, model adicionar
-	static moveTask(columnContainer, taskData, initialModelString, finalModelString){
+	moveTask(columnContainer, taskData, initialModelString, finalModelString){
 
 		let IDtask = taskData.children[1].children[2].textContent;
 
@@ -65,7 +69,7 @@ class ModelList{
 			case 'completed':
 						initialModel = controller.model.CompletedTasks;
 						taskVar = initialModel.find(task => task.id == IDtask);
-						
+
 					break;
 		}
 

@@ -1,15 +1,27 @@
 class Controller{
 
 	constructor(){
-		
-		this.model = new ModelList();
+
+		let self = this;
+		this.model = ProxyFactory.create(new ModelList(), self);
 		this.view = new View();
 
 		this.submitButton = $(".botao-adiciona");
 
 		this.assignButtonEvent(this.submitButton);
 		this.idTask = 1;
+		this.taskDAO = null;
+		this.init();
 
+	}
+
+	init(){
+		ConnectionFactory.getConnection()
+			.then(result => {
+				this.taskDAO = new TaskDAO(result);
+				console.log(result);
+			})
+			.catch(erro => console.log(erro))
 	}
 
 	assignButtonEvent(submitButton){
@@ -29,20 +41,35 @@ class Controller{
 			"date": Helper.returnDate(),
 		}
 
-		this.idTask++;
-
 		if(!task.taskName){
 			return alert("Task name can't be blank");
 		}
 
-		this.model.PendingTasks.push(task);
+		this.taskDAO.adiciona(task)
+			.then(dados => console.log(dados))
+			.catch(erro => console.log(erro));
+
+		this.idTask++;
+
+
+		this.model.adicionarTarefa(task)
 
 		this.view.updateViewPending(this.model.PendingTasks);
 
 		let taskCells = Array.from(document.querySelectorAll(".task-cell"));
 
-		Helper.assignDragMovement(taskCells);
+		Helper.assignDragMovement(taskCells, this.model);
+
+		$("#nome-tarefa").value = "";
+
+		// BancoHelper.adiciona();
 	}
 
-	
+	onDrop(evento){
+		Helper.onDrop(evento, this.model);
+	}
+
+
+
+
 }

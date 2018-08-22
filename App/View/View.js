@@ -14,7 +14,7 @@ class View{
 								<h4>${task.taskName}</h4>
 							</div>
 							<div class="task-content">
-								<span class="category-span"><strong>Category:<br></strong> ${task.category}</span>
+								<span class="category-span"><strong>Category:<br></strong> ${task.category}</span><br>
 								<span class="time-span"><strong>Added at:<br></strong> ${task.date}</span>
 								<span class="id-task">${task.id}</span>
 							</div>
@@ -23,6 +23,6 @@ class View{
 
 		this.PendingTasksContainer.innerHTML = this.TaskCellsPending.join('');
 
-		
+
 	}
 }
